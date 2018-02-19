@@ -1,17 +1,18 @@
 #!/bin/bash
+
 case "$1" in
-  "-setup")
+  "setup")
     # Prepare GPIO4
     echo 4 > /sys/class/gpio/export
 
     # Set GPIO4 as output
     echo out > /sys/class/gpio/gpio4/direction
     ;;
-  "-on")
+  "on")
     # Set GPIO4 as high
     echo 1 > /sys/class/gpio/gpio4/value
     ;;
-  "-off")
+  "off")
     # Set GPIO4 as low
     echo 0 > /sys/class/gpio/gpio4/value
     ;;
@@ -20,3 +21,4 @@ case "$1" in
     exit 1
     ;;
 esac
+
